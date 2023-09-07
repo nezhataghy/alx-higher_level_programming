@@ -13,5 +13,5 @@ if __name__ == "__main__":
         print("{} arguments:".format(count))
         for arg in argv:
             if arg != argv[1]:
-                print("{}: {}".format(i, arg))
+                print("{}: {}".format(i, argv[i + 1]))
                 i += 1
