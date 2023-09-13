@@ -10,8 +10,6 @@ def roman_to_int(roman_string):
          "L": 50, "C": 100, "D": 500, "M": 1000}
 
     for i in range(size):
-        if D.get(roman_string[i], 0) == 0:
-            return (0)
 
         if (i < (size - 1) and D[roman_string[i]] < D[roman_string[i + 1]]):
             output -= D[roman_string[i]]
