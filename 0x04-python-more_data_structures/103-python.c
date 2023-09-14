@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <Python.h>
 
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+
 void print_python_bytes(PyObject *p)
 {
 	int size, i, Bytes_to_print;
@@ -10,7 +13,7 @@ void print_python_bytes(PyObject *p)
 	if (PyBytes_Check(p))
 	{
 		size = ((PyVarObject *)(p))->ob_size;
-		printf("  size: %ld\n", size);
+		printf("  size: %d\n", size);
 		buffer = ((PyBytesObject *)p)->ob_sval;
 		printf("  trying string: %s\n", buffer);
 
@@ -34,9 +37,6 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-
-	void print_python_list(PyObject * p);
-	void print_python_bytes(PyObject * p);
 
 	/**
 	 * print_python_list - Prints basic info about Python lists.
