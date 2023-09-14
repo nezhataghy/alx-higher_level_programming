@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <Python.h>
 
-void print_python_list(PyObject *p);
-void print_python_bytes(PyObject *p);
-
+/**
+ * print_python_bytes - Prints basic info about Python Obj bytes.
+ * @p: A PyObject list object.
+ */
 void print_python_bytes(PyObject *p)
 {
 	int size, i, Bytes_to_print;
@@ -25,10 +26,10 @@ void print_python_bytes(PyObject *p)
 		printf("  first %d bytes:", Bytes_to_print);
 
 		for (i = 0; i < Bytes_to_print; i++)
-			if (string[i] >= 0)
-				printf(" %02x", string[i]);
+			if (buffer[i] >= 0)
+				printf(" %02x", buffer[i]);
 			else
-				printf(" %02x", 256 + string[i]);
+				printf(" %02x", 256 + buffer[i]);
 
 		printf("\n");
 	}
