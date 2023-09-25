@@ -31,7 +31,7 @@ void print_python_bytes(PyObject *p)
 	while (m < size)
 	{
 		printf("%02hhx", bytes->ob_sval[m]);
-		if (i == (size - 1))
+		if (m == (size - 1))
 			printf("\n");
 		else
 			printf(" ");
@@ -93,11 +93,11 @@ void print_python_list(PyObject *p)
 	while (m < size)
 	{
 		type = list->ob_item[m]->ob_type->tp_name;
-		printf("Element %ld: %s\n", i, type);
+		printf("Element %ld: %s\n", m, type);
 		if (strcmp(type, "bytes") == 0)
-			print_python_bytes(list->ob_item[i]);
+			print_python_bytes(list->ob_item[m]);
 		else if (strcmp(type, "float") == 0)
-			print_python_float(list->ob_item[i]);
+			print_python_float(list->ob_item[m]);
 		m++;
 	}
 }
