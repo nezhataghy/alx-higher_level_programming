@@ -88,7 +88,7 @@ void print_python_list(PyObject *p)
 	}
 
 	printf("[*] Size of the Python List = %ld\n", size);
-	printf("[*] Allocated = %ld\n", alloc);
+	printf("[*] Allocated = %ld\n", mem_alloc);
 
 	while (m < size)
 	{
