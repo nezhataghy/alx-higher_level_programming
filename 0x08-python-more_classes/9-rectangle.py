@@ -51,20 +51,22 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return the Rectangle with the greater area.
-        """
+        '''Method that returns the bigger Rectangle'''
+
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
+
         if rect_1.area() >= rect_2.area():
-            return (rect_1)
-        return (rect_2)
+            return rect_1
+        else:
+            return rect_2
 
     @classmethod
     def square(cls, size=0):
-        """Return a new Rectangle with width and height equal to size.
-        """
+        '''Creates a Rectangle instance
+          where width and height are size'''
         return (cls(size, size))
 
     def __str__(self):
@@ -88,6 +90,6 @@ class Rectangle:
         return rep
 
     def __del__(self):
-        """Print a message for every deletion of a Rectangle."""
-        type(self).number_of_instances -= 1
+        '''Detect instance deletion'''
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
