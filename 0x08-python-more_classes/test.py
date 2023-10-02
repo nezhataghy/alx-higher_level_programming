@@ -8,9 +8,9 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        Rectangle.number_of_instances += 1
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -19,7 +19,6 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        '''width'''
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -33,7 +32,6 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        '''height'''
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
