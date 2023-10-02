@@ -8,8 +8,7 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
-        """
+        '''init'''
         type(self).number_of_instances += 1
         self.width = width
         self.height = height
@@ -82,10 +81,11 @@ class Rectangle:
         return ("".join(rect))
 
     def __repr__(self):
-        """Return the string representation of the Rectangle."""
-        rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) + ")"
-        return (rect)
+        '''string representation of the rectangle
+          to be able to recreate a new instance'''
+        rep = "{}({}, {})".format(self.__class__.__name__,
+                                  self.width, self.height)
+        return rep
 
     def __del__(self):
         """Print a message for every deletion of a Rectangle."""
