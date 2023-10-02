@@ -7,7 +7,6 @@ algorithm that resolves the N-Queen puzzle using backtracking
 def isSafe(m_queen, nqueen):
     """ Method that determines if the queens can or can't kill each other
     """
-
     for i in range(nqueen):
         if m_queen[i] == m_queen[nqueen]:
             return False
@@ -19,7 +18,6 @@ def isSafe(m_queen, nqueen):
 def print_result(m_queen, nqueen):
     """ Method that prints the list with the Queens positions
     """
-
     res = []
     for i in range(nqueen):
         res.append([i, m_queen[i]])
@@ -29,7 +27,6 @@ def print_result(m_queen, nqueen):
 def Queen(m_queen, nqueen):
     """ Recursive function that executes the Backtracking algorithm
     """
-
     if nqueen is len(m_queen):
         print_result(m_queen, nqueen)
         return
@@ -60,10 +57,10 @@ if __name__ == '__main__':
 
     try:
         size = int(sys.argv[1])
-    except TypeError:
+
+    except Exception:
         print("N must be a number")
         sys.exit(1)
-
     if size < 4:
         print("N must be at least 4")
         sys.exit(1)
