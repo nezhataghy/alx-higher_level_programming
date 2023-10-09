@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-def is_same_class(obj, a_class):
-    '''
-        Check if the objects have the same class
-    '''
-    if type(obj) is a_class:
-        return True
-    return False
+def is_kind_of_class(obj, a_class):
+    """ Function that returns True/False if obj is an instance of a_class
+    """
+    return isinstance(obj, a_class)
