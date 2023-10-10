@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""loads adds saves json to file"""
+"""loads adds saves json to the file"""
 import json
 import sys
 save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
