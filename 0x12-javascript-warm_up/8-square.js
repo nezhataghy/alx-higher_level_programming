@@ -1,17 +1,16 @@
 #!/usr/bin/node
 const numb = process.argv[2];
-let n = 0; let m = 0;
+let n = 0;
 
-if (isNaN(parseInt(numb))) {
-  console.log('Missing number of occurrences');
+if (isNaN(numb)) {
+  console.log('Missing size');
 } else {
   while (n < numb) {
     let txt = '';
-    while (m < numb) {
+    for (let m = 0; m < numb; m++) {
       txt = txt + 'X';
-      m++;
     }
-    console.log('X');
+    console.log(txt);
     n++;
   }
 }
