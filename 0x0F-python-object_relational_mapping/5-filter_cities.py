@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     cursor = con.cursor()
     cursor.execute(
-        """SELECT cities.name FROM cities JOIN states ON state_id=states.id 
+        """SELECT cities.name FROM cities JOIN states ON state_id=states.id
                     WHERE states.name = %s ORDER BY cities.id;""", (argv[4],))
     records = cursor.fetchall()
     print(", ".join(row[0] for row in records))
