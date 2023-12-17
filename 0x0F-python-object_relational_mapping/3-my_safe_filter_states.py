@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     cursor = con.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY id;".format(argv[4]))
+        "SELECT * FROM states WHERE name = %s ORDER BY id;",(argv[4]))
     records = cursor.fetchall()
     for row in records:
         print(row)
