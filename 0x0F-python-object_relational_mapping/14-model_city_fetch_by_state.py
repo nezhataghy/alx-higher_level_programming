@@ -7,7 +7,6 @@ from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import relationship
 
 if __name__ == "__main__":
     con = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
@@ -15,7 +14,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=my_eng)
     session = Session()
-    demand = session.demand(State, City).filter(
+    demand = session.query(State, City).filter(
         City.state_id == State.id).all()
     for row in demand:
         print("{}: ({}) {}".format(row[0].name, row[1].id, row[1].name))
