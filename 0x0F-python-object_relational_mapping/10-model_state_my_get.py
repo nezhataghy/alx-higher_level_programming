@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that prints the first State object from the database hbtn_0e_6_usa
+script that prints the first State object with the name passed as argument
+from the database hbtn_0e_6_usa
 """
 from sys import argv
 from model_state import Base, State
@@ -13,8 +14,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=my_eng)
     session = Session()
-    demand = (session.query(State).
-             filter_by(name=argv[4]).order_by(State.id).all())
+    demand = (session.query(State).filter_by(
+        name=argv[4]).order_by(State.id).all())
     if not demand:
         print("Not found")
     for item in demand:
