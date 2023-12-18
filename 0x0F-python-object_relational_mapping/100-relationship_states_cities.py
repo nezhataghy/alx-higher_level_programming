@@ -21,3 +21,4 @@ if __name__ == "__main__":
     n_state.cities.append(n_city)
     session.add_all([n_state, n_city])
     session.commit()
+    session.close()
