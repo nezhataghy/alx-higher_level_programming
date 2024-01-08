@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import requests
 
     reponse = requests.get(sys.argv[1])
-    if (reponse.status_code >= 400): # error
+    if (reponse.status_code >= 400):  # error
         print(f"Error code: {reponse.status_code}")
     else:
         print(reponse.text)
