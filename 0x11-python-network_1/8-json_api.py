@@ -6,7 +6,6 @@ if __name__ == "__main__":
     import sys
     import requests
 
-
     if len(sys.argv) == 2:
         letter = sys.argv[1]
     else:
@@ -19,5 +18,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(user["id"], user["name"]))
         else:
             print("No result")
-    except:
+    except ValueError:
         print("Not a valid JSON")
