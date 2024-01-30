@@ -3,7 +3,6 @@
 const request = require('request');
 const url = 'http://swapi.co/api/films/' + process.argv[2];
 
-request(url, function (err, data, body) {
-  if (err) throw err;
-  console.log(JSON.parse(body).title);
+request(url, function (error, response, body) {
+  console.log(error || JSON.parse(body).title);
 });
