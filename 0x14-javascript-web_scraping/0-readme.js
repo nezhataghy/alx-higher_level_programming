@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-let fs = require('fs');
+const fs = require('fs');
 
 fs.readFile(process.argv[2], function (err, data) {
-    console.log(err || data.toString());
+  console.log(err || data.toString());
 });
